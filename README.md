@@ -12,12 +12,17 @@ This project provides a sample conversion tool to convert a .json into a .jbin f
 a .cpp file reads the file in a single call, and dumps the contents to console.
 
 To generate a .jbin from a .json file using the conversion tool written in js.
+```
 $ node json2jbin.js -d sample1.json sample1.jbin
+```
 
 sample1.json:
+```
 {"name":"john","tape":3,"langs":["es","en","ca"]}
+```
 
 sample1.jbin: (as output from the node console)
+```
 [ <Buffer bb bb bb bb 03 00 00 00>,
   <Buffer 18 00 00 00 30 00 00 00>,
   <Buffer 19 00 00 00 31 00 00 00>,
@@ -35,9 +40,11 @@ sample1.jbin: (as output from the node console)
   <Buffer 55 55 55 55 65 6e 00>,
   <Buffer 55 55 55 55 63 61 00> ]
 Save to 118 bytes
+```
 
 Read the file from a c++ (see the source)
 Expected output:
+```
    (object  )  Object of 3 keys
      name
      (string  )john
@@ -48,4 +55,4 @@ Expected output:
        (string  )es
        (string  )en
        (string  )ca
-
+```
